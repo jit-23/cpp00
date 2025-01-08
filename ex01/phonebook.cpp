@@ -6,49 +6,44 @@
 /*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 02:37:38 by fde-jesu          #+#    #+#             */
-/*   Updated: 2025/01/08 03:22:29 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:15:58 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
 #include "phonebook.hpp"
 
-void fill_phonebook(class *phone);
-int cmp_cmdl(char *cmdl);
+void fill_phonebook(Phonebook *phone);
 
-
-int cmp_cmdl(char *cmdl)
+int cmp_cmdl(const std::string cmdl)
 {
-	if (strcmp(cmdl, EOF))
+	if (cmdl.empty())
 		return 0;
 	return 1;
 }
 
-void fill_phonebook(class *phone)
+void fill_phonebook(Phonebook *phone)
 {
-	char *cmdl >> cin;
-
+	std::string raw_cmdl;
+	std::string cmdl;
+	getline(std::cin, raw_cmdl);
+	
+	
 	while(cmp_cmdl(cmdl))
 	{
-		switch (cmp_cmdl)
+		if (cmdl == "SEARCH")
 		{
-		case "SEARCH":
-			std::count << "SEARCH" << std::endl;
-			break;
-		case "EXIT":
-			std::count << "exit" << std::endl;
-			exit(1);
-			break;
-		case "ADD":
-			std::count << "add" << std::endl;
-			break;
-		default:
-			std::count << "default" << std::endl;
-
-			break;
+			std::cout << "SEARCH" << std::endl;
 		}
+		else if (cmdl == "EXIT")
+		{
+			std::cout << "exit" << std::endl;
+			exit(1);
+		}
+		else if (cmdl ==  "ADD")
+		{
+			std::cout << "add" << std::endl;
+		}
+		getline(std::cin, cmdl);
 	}
 }
 int main()

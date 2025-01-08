@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 02:37:30 by fde-jesu          #+#    #+#             */
-/*   Updated: 2025/01/08 03:18:57 by fde-jesu         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:26:13 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 #define PHONEBOOK_HPP
 
 #include<iostream>
+#include <cstring>
+#include <iomanip>
 
-Class Phonebook{
-	public:
-		Class Contact[8];
-}
-
-Class Contact{
+class Contact{
 	public:
 		char *first_name;
 		char *last_name;
@@ -38,6 +35,12 @@ Class Contact{
 		
 	private:
 		char *dark_secret;
-}
+};
+
+class Phonebook{
+	public:
+		Contact contact[8];
+};
+
 
 #endif

@@ -1,7 +1,7 @@
 NAME:=phonebook
 FLAGS:= -g -Wall -Werror -Wextra -std=c++98
 CC:= g++
-SRC:= phonebook.cpp phonebook.hpp
+SRC:= phonebook.cpp
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
 all: ${NAME}
